@@ -11,5 +11,5 @@ git tag -a $TAG -m $TAG
 git add -A
 git commit -m $TAG
 git push origin --tags $TAG
-git push origin master
+git push origin main
 
