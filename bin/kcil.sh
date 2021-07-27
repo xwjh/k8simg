@@ -2,7 +2,7 @@
 
 cd `dirname $0`
 
-kubeadm config images list > kcil.txt
+kubeadm config images list > ../k8s.gcr.io/kcil.txt
 cat kcil.txt | awk -F '[/:]' '{print "mkdir "$2" > /dev/null 2>&1; echo -e \"from "$0"\" > "$2"/Dockerfile"}'|bash
 
 cd ..
