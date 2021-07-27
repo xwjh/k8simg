@@ -7,9 +7,10 @@ cat kcil.txt | awk -F '[/:]' '{print "mkdir "$2" > /dev/null 2>&1; echo -e \"fro
 
 cd ..
 TAG=$(kubeadm version -ojson|jq -r .clientVersion.gitVersion)
-git tag -a $TAG -m $TAG
 git add -A
 git commit -m $TAG
-git push origin --tags $TAG
 git push origin main
+
+git tag -a $TAG -m $TAG
+git push origin --tags $TAG
 
